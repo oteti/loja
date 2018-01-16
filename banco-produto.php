@@ -10,8 +10,8 @@ function listaProdutos($conexao)
   return $produtos;
 }
 
-function insereProduto($nome, $preco, $conexao){
-    $query = "insert into produtos (nome,preco) values('{$nome}',{$preco})";
+function insereProduto($nome, $preco, $conexao, $descricao){
+    $query = "insert into produtos (nome,preco,descricao) values('{$nome}',{$preco},'{$descricao}')";
     return mysqli_query($conexao,$query);
 }
 

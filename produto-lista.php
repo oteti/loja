@@ -15,10 +15,14 @@ $produtos = listaProdutos($conexao);
     foreach ($produtos as $produto) :
 ?>
     <tr>
-      <td> <?php echo $produto['nome'] . "<br/>"; ?> </td>
-      <td> <?php echo $produto['preco'] . "<br/>"; ?> </td>
+      <td> <?=$produto['nome'] ?> </td>
+      <td> <?=$produto['preco'] ?> </td>
+      <td> <?=substr($produto['descricao'],0,40) ?> </td>
       <td>
-         <a href="remove-produto.php?id=<?=$produto['id']?>" class="btn btn-danger">remover</a>
+        <form action="remove-produto.php" method="post">
+          <input type="hidden" name="id" value="<?=$produto['id']?>">
+          <button class="btn btn-danger">remove</button>
+        </form>
       </td>
     </tr>
 

@@ -1,24 +1,30 @@
 <html>
 <head>
-		<title> Minha loja </title>
-		<meta charset="utf-8">
-		<link href="css/bootstrap.css" rel="stylesheet" />
-		<link href="css/loja.css" rel="stylesheet" />
+    <title>Minha loja</title>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/loja.css" rel="stylesheet" />
 </head>
-<div class="navbar navbar-default">
+<body>
 		<div class="container">
-				<div class="navbar-header">
-						<a href="index.php" class="navbar-brand">Minha Loja</a>
-						</div>
-						<div>
-							<ul class="nav navbar-nav">
-									<li><a href="produto-formulario.php">Adiciona Produto</a></li>
-									<li><a href="produto-lista.php">Produtos</a></li>
-									<li><a href="sobre.php">Sobre</a></li>
+			<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+					<ul class="navbar-nav">
+	 						<li class="nav-item active">
+		 							<a href="index.php" class="navbar-brand">Minha Loja</a>
+	 						</li>
+							<li class="nav-item">
+									<a class="nav-link" href="produto-formulario.php">Adiciona produto</a>
+						 	</li>
+							<li class="nav-item">
+								  <a class="nav-link" href="produto-lista.php">Remove produto</a>
+							</li>
+							<li class="nav-item">
+								  <a class="nav-link disabled" href="sobre.php">Sobre</a>
+							</li>
+ 					</ul>
+			</nav>
+    </div>
 
-							</ul>
-						</div>
-				</div>
-			</div>
-		<div class="container">
-			<div class="principal">
+    <div class="container">
+
+    <div class="principal">
