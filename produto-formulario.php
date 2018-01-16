@@ -1,17 +1,18 @@
-<?php include 'cabecalho.php'; ?>
+<?php include ('cabecalho.php'); ?>
+
 <h1>Formulário de cadastro</h1>
-  <form>
+  <form action="adiciona-produto.php">
     <table class="table">
       <tr>
           <td>Nome:</td>
           <td>
-             <input type="text" name="nome" class="form-control"></br>
+             <input type="text" name="nome" class="form-control"></imput></br>
            </td>
       </tr>
       <tr>
           <td>Preco:</td>
           <td>
-             <input type="number" name="preco" class="form-control"></br>
+             <input type="number" name="preco" class="form-control"></input></br>
            </td>
       </tr>
       <tr>

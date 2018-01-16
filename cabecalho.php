@@ -5,7 +5,7 @@
 		<link href="css/bootstrap.css" rel="stylesheet" />
 		<link href="css/loja.css" rel="stylesheet" />
 </head>
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-fixed-top">
 		<div class="container">
 				<div class="navbar-header">
 						<a href="index.php" class="navbar-brand">Minha Loja</a>

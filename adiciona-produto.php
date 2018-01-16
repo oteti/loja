@@ -1,8 +1,8 @@
-<?php include ('cabecalho.php'); ?>
+<?php include("cabecalho.php"); ?>
 <?php
         function insereProduto($nome, $preco, $conexao){
-          $query = "insert into produtos (nome,preco) values('{$nome}',{$preco})";
-          return mysqli_query($conexao,$query);
+            $query = "insert into produtos (nome,preco) values('{$nome}',{$preco})";
+            return mysqli_query($conexao,$query);
         }
 
         $nome = $_GET["nome"];
@@ -13,16 +13,13 @@
 
             <p class="alert-success"> Produto <?php echo $nome; ?> de preço <?php echo $preco; ?> adicionado com sucesso!; </p>
 
-          <?php }
-           else {
+          <?php } else {
              $msgErro = mysqli_error($conexao);
              ?>
-
             <p class="alert-danger"> Produto <?php echo $nome; ?> não foi adicionado:<?php echo $msgErro; ?>; </p>
-
-          <?php }
+            <?php }
 
         mysqli_close($conexao);
 
           ?>
-<?php include ('rodape.php'); ?>
+<?php include('rodape.php'); ?>
