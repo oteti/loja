@@ -2,6 +2,10 @@
 include 'conecta.php';
 include 'banco-produto.php';
 
+if(array_key_exists("removido", $_GET) && $_GET['removido']=='true') { ?>
+<p class="alert-success">Produto apagado com sucesso.</p>
+<?php }
+
 $produtos = listaProdutos($conexao);
 ?>
 
@@ -13,6 +17,9 @@ $produtos = listaProdutos($conexao);
     <tr>
       <td> <?php echo $produto['nome'] . "<br/>"; ?> </td>
       <td> <?php echo $produto['preco'] . "<br/>"; ?> </td>
+      <td>
+         <a href="remove-produto.php?id=<?=$produto['id']?>" class="btn btn-danger">remover</a>
+      </td>
     </tr>
 
 <?php
