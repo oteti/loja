@@ -1,11 +1,16 @@
 <?php include ('cabecalho.php');
 include 'conecta.php';
 include 'banco-categoria.php';
+
+$id = $_GET['id'];
+$produto = buscaID($conexao,$id){
+
+}
 $categorias = listaCategoria($conexao);
  ?>
 
-<h1>Formulário de cadastro</h1>
-  <form action="adiciona-produto.php" method="post">
+<h1>Alterando produto</h1>
+  <form action="altera-produto.php" method="post">
     <table class="table">
       <tr>
           <td>Nome:</td>
@@ -41,7 +46,7 @@ $categorias = listaCategoria($conexao);
           </td>
       </tr>
           <td>
-            <button type="submit" value="cadastrar" class="btn btn-primary">Cadastrar</button>
+            <input type="submit" value="Alterar" class="btn btn-primary"></input>
           </td>
           </table>
 
