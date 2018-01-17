@@ -16,7 +16,7 @@
 									<a class="nav-link" href="produto-formulario.php">Adiciona produto</a>
 						 	</li>
 							<li class="nav-item">
-								  <a class="nav-link" href="produto-lista.php">Remove produto</a>
+								  <a class="nav-link" href="produto-lista.php">Produtos</a>
 							</li>
 							<li class="nav-item">
 								  <a class="nav-link disabled" href="sobre.php">Sobre</a>
