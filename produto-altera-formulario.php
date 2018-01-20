@@ -11,6 +11,7 @@ $usado = $produto['usado'] ? "checked='checked'" : "";
 
 <h1>Alterando produto</h1>
   <form action="altera-produto.php" method="post">
+    <input type="hidden" name="id" value="<?=$produto['id']?>">
     <table class="table">
       <tr>
           <td>Nome:</td>
@@ -38,10 +39,12 @@ $usado = $produto['usado'] ? "checked='checked'" : "";
           <td>Categoria</td>
           <td>
             <select class="form-control" name="categoria_id">
-              <?php foreach ($categorias as $categoria): ?>
-                <option value="<?=$categoria['id']?>"> <?=$categoria['nome']? ></br>
-                $ehCategoria= $produto['categoria_id'] == $categoria_id;
-                $ehCategoria ? "selected = 'selected'" : "";
+              <?php foreach ($categorias as $categoria):
+                $ehCategoria = $produto['categoria_id'] == $categoria['id'];
+                $selecao = $ehCategoria ? "selected = 'selected'" : "";
+                ?>
+                <option value="<?=$categoria['id']?>" <?=$selecao?>> <?=$categoria['nome']?>
+                </option>
               <?php endforeach; ?>
             </select>
 
