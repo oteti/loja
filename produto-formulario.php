@@ -20,7 +20,7 @@ $categorias = listaCategoria($conexao);
            </td>
       </tr>
       <tr>
-          <td>Descrição;</td>
+          <td>Descrição:</td>
           <td>
             <textarea name="descricao" class="form-control"></textarea></br>
           </td>
