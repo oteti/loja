@@ -1,11 +1,14 @@
 <?php include 'conecta.php';
 include 'banco-usuario.php';
+include 'logica-usuario.php';
 
 $usuario = buscaUsuario($conexao, $_POST["email"],$_POST["senha"]);
 if ($usuario == null) {
-  header("Location: index.php?login=0");
+  $_SESSION["danger"] = "Usuario ou senha invalida";
+  header("Location: index.php");
 } else {
-  header("Location: index.php?login=1");
-  setcookie("usuario_logado", $usuario["email"]);
+  $_SESSION["success"] = "Logado com sucesso";
+  header("Location: index.php");
+  logaUsuario($usuario["email"]);
 }
 die();

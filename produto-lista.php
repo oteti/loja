@@ -1,10 +1,12 @@
 <?php include 'cabecalho.php';
 include 'conecta.php';
 include 'banco-produto.php';
+include 'logica-usuario.php';
 
-if(array_key_exists("removido", $_GET) && $_GET['removido']=='true') { ?>
-<p class="alert-success">Produto apagado com sucesso.</p>
-<?php }
+if(isset($_SESSION["success"])) { ?>
+<p class="alert-success"><?= $_SESSION["success"] ?>.</p>
+
+<?php unset($_SESSION["success"]); }
 
 $produtos = listaProdutos($conexao);
 ?>
@@ -19,7 +21,7 @@ $produtos = listaProdutos($conexao);
       <td> <?=$produto['preco'] ?> </td>
       <td> <?=substr($produto['descricao'],0,40) ?> </td>
       <td> <?=$produto['categoria_nome']?></td>
-      <td>  <a href="produto-altera-formulario.php?id=<?=$produto['id']?>" class="btn btn-primary">alterar</td>
+      <td> <a href="produto-altera-formulario.php?id=<?=$produto['id']?>" class="btn btn-primary">alterar</td>
       <td>
         <form action="remove-produto.php" method="post">
           <input type="hidden" name="id" value="<?=$produto['id']?>">

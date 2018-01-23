@@ -1,25 +1,39 @@
-<?php include 'cabecalho.php'; ?>
+<?php include 'cabecalho.php';
+	include 'logica-usuario.php';
+	?>
+
 				<?php $nome = "Otavio"; ?>
 				<h1>Loja do <?php echo $nome; ?><h1>
 				<h2>Login</h2>
-				<?php if (isset($_GET["login"]) && $_GET["login"] ==true)
+				<?php if (isset($_SESSION["success"]))
 					{
 					?>
-					<p class="alert-success">Logado com sucesso</p>
+					<p class="alert-success"><?= $_SESSION["success"] ?></p>
 				<?php
+					unset($_SESSION["success"]);
 			 		}
 					?>
-				<?php if (isset($_GET["login"]) && $_GET["login"]==false)
+				<?php if (isset($_SESSION["danger"]))
 					{
 					?>
-					<p class="alert-danger">Usuario ou senha invalida</p>
+					<p class="alert-danger"><?= $_SESSION["danger"] ?></p>
 				<?php
+					unset($_SESSION["danger"]);
+					}
+					?>
+				<?php if (isset($_SESSION["success"]))
+					{
+					?>
+					<p class="alert-danger"><?= $_SESSION["success"] ?></p>
+				<?php
+					unset($_SESSION["success"]);
 					}
 					?>
 					<?php
-					if (isset($_COOKIE["usuario_logado"])) {
+					if (isset($_SESSION["usuario_logado"])) {
 						?>
-						<p class="text-success"> O usuario <?= $_COOKIE["usuario_logado"]?> foi logado com sucesso!</p>
+						<p class="text-success"> O usuario <?= usuarioLogado();?> foi logado com sucesso!
+						<a href="logout.php">logout</a></p>
 					<?php }  else { ?>
 
 						<form action="login.php" method="post">

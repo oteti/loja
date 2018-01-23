@@ -2,6 +2,9 @@
  include 'conecta.php';
  include 'banco-produto.php';
  include 'banco-categoria.php';
+ include 'logica-usuario.php';
+
+        verificaUsuario();
 
         $nome = $_POST["nome"];
         $preco = $_POST["preco"];
@@ -12,7 +15,7 @@
         }else {
             $usado = "false";
         }
-      
+
         if (insereProduto($nome, $preco, $conexao, $descricao,$categoria_id,$usado)) { ?>
 
             <p class="alert-success"> Produto <?=$nome; ?> de preço <?=$preco; ?> adicionado com sucesso!; </p>
