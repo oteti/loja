@@ -27,6 +27,7 @@ function listaProdutos($conexao)
 }
 
 function insereProduto($nome, $preco, $conexao, $descricao, $categoria_id,$usado){
+    $nome = mysqli_real_escape_string($conexao, $nome);
     $query = "insert into produtos (nome,preco,descricao,categoria_id,usado)
      values('{$nome}',{$preco},'{$descricao}',{$categoria_id},{$usado})";
     return mysqli_query($conexao,$query);

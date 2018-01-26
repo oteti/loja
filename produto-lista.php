@@ -3,17 +3,14 @@ include 'conecta.php';
 include 'banco-produto.php';
 include 'logica-usuario.php';
 
-if(isset($_SESSION["success"])) { ?>
-<p class="alert-success"><?= $_SESSION["success"] ?>.</p>
-
-<?php unset($_SESSION["success"]); }
-
 $produtos = listaProdutos($conexao);
+
 ?>
 
 <table class="table table-striped table-bordered" >
 
 <?php
+
     foreach ($produtos as $produto) :
 ?>
     <tr>
