@@ -1,7 +1,6 @@
-<?php include("cabecalho.php");
- include 'conecta.php';
- include 'banco-produto.php';
- include 'banco-categoria.php';
+<?php require_once ("cabecalho.php");
+ require_once 'banco-produto.php';
+ require_once 'banco-categoria.php';
 
         $id = $_POST["id"];
         $nome = $_POST["nome"];

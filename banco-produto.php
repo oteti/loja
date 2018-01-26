@@ -1,4 +1,4 @@
-<?php
+<?php require_once ("conecta.php");
 
 function buscaProduto( $conexao,$id)
 {
@@ -9,6 +9,7 @@ function buscaProduto( $conexao,$id)
 
 function alteraProduto($conexao,$id, $nome, $preco, $descricao, $categoria_id,$usado)
 {
+  $nome = mysqli_real_escape_string($conexao, $nome);
   $query = "update produtos set nome = '{$nome}', preco = '{$preco}',
     descricao = '{$descricao}', categoria_id = {$categoria_id},
     usado = {$usado} where id = '{$id}'";
