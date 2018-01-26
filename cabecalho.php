@@ -23,7 +23,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 								  <a class="nav-link" href="produto-lista.php">Produtos</a>
 							</li>
 							<li class="nav-item">
-								  <a class="nav-link disabled" href="sobre.php">Sobre</a>
+								  <a class="nav-link" href="contato.php">Contato</a>
 							</li>
  					</ul>
 			</nav>
