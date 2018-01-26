@@ -12,11 +12,11 @@ $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
-$mail->Username = "heartboxdama@gmail.com";
-$mail->Password = "elpsycongroo";
+$mail->Username = "emailqualquer@gmail.com";
+$mail->Password = "*********";
 
-$mail->setFrom("otete14@gmail.com", "sou eu");
-$mail->addAddress("heartboxdama@gmail.com");
+$mail->setFrom("emailqueenvia@gmail.com", "sou eu");
+$mail->addAddress("emailqualquer@gmail.com");
 $mail->Subject = "Email de contato da loja";
 $mail->msgHTML("<html>de: {$nome}<br/>email: {$email}<br/>mensagem: {$mensagem}</html>");
 $mail->AltBody = "de: {$nome}\nemail:{$email}\nmensagem: {$mensagem}";
