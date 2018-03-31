@@ -2,27 +2,29 @@
  require_once 'banco-produto.php';
  require_once 'banco-categoria.php';
  require_once 'logica-usuario.php';
+ require_once 'class/Produto.php';
 
         verificaUsuario();
+        $produto = new Produto();
 
-        $nome = $_POST["nome"];
-        $preco = $_POST["preco"];
-        $descricao = $_POST["descricao"];
-        $categoria_id = $_POST["categoria_id"];
+        $produto->nome = $_POST["nome"];
+        $produto->preco = $_POST["preco"];
+        $produto->descricao = $_POST["descricao"];
+        $produto->categoria_id = $_POST["categoria_id"];
         if (array_key_exists('usado',$_POST)) {
-            $usado = true;
+            $produto->usado = true;
         }else {
-            $usado = "false";
+            $produto->usado = "false";
         }
 
-        if (insereProduto($nome, $preco, $conexao, $descricao,$categoria_id,$usado)) { ?>
+        if (insereProduto($conexao, Produto $produto)) { ?>
 
-            <p class="alert-success"> Produto <?=$nome; ?> de preço <?=$preco; ?> adicionado com sucesso!; </p>
+            <p class="alert-success"> Produto <?=$produto->nome; ?> de preço <?=$produto->preco; ?> adicionado com sucesso!; </p>
 
           <?php } else {
              $msgErro = mysqli_error($conexao);
              ?>
-            <p class="alert-danger"> Produto <?=$nome; ?> não foi adicionado:<?=$msgErro; ?>; </p>
+            <p class="alert-danger"> Produto <?=$produto->nome; ?> não foi adicionado:<?=$msgErro; ?>; </p>
             <?php }
 
         mysqli_close($conexao);
